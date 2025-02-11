@@ -35,4 +35,5 @@ def main(pdf_path):
         even_writer.write(even_file)
 
 # 示例用法
-main("example_odd.pdf")
+if __name__ == '__main__':
+    main("example_odd.pdf")
