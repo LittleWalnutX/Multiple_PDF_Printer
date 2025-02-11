@@ -20,12 +20,9 @@ def main(input_file):
         oddPageList.extend((addedPageNum - 1 - i, i))
 
     for j in range(1, addedPageNum // 2, 2):
-        evenPageList.extend((j, addedPageNum - 1 - j))
-        
+        evenPageList.extend((addedPageNum - 1 - j, j))
     evenPageList = evenPageList[::-1]
-
-    print(oddPageList, evenPageList)
-
+        
     for i in range(len(oddPageList)):
         if oddPageList[i] < pdf_reader.getNumPages():
             oddPageList[i] = pdf_reader.getPage(oddPageList[i])

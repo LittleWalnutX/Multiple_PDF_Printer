@@ -3,7 +3,8 @@ import re
 import sys
 from PySide6.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QHBoxLayout, QWidget, QLabel, QPushButton, QFileDialog, QMessageBox
 from PySide6.QtCore import Qt, Signal, Slot
-from PySide6.QtGui import QDragEnterEvent, QDropEvent
+from PySide6.QtGui import QPixmap, QIcon, QDragEnterEvent, QDropEvent
+
 
 import merge_brochure
 import merge_duplex
@@ -35,8 +36,9 @@ class FileDropLabel(QLabel):
 class FileDropApp(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("文件拖放应用")
+        self.setWindowTitle("双面打印和小册子打印")
         self.resize(500, 400)
+        self.setWindowIcon(QIcon('bell.ico'))  # 假设你的图标文件名为 icon.ico
 
         self.central_widget = QWidget()
         self.setCentralWidget(self.central_widget)
